@@ -1,6 +1,8 @@
 html {
   box-sizing: border-box;
-  font-family: "Georgia", serif;
+  font-family: Georgia, serif;
+  line-height: 1.5;
+  background-color: #f2f1ed;
 }
 
 *,
@@ -17,4 +19,81 @@ img {
 header {
   /* Remove the <header> box and allow us to directly apply header’s children to the grid. */
   display: contents;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  grid-template-areas:
+    "banner banner"
+    "col1 col2";
+}
+
+.logo {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
+  width: 14rem;
+  margin: 0 0 1rem 1rem;
+  order: 1;
+}
+
+.pano {
+  grid-area: banner;
+}
+
+nav {
+  grid-column: 2 / -2;
+  grid-row: 1;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: start;
+}
+
+li {
+  margin: 0;
+  padding: 1rem;
+  font-family: "Patua One", sans-serif;
+  font-size: 2rem;
+}
+
+a {
+  text-decoration: underline;
+  color: #fff;
+}
+
+main {
+  display: contents;
+}
+
+figure:nth-child(1) {
+  grid-area: col1;
+  margin: 0;
+}
+
+figure:nth-child(2) {
+  grid-area: col2;
+  margin: 0;
+}
+
+figcaption {
+  margin-top: 1rem;
+}
+
+h2 {
+  color: #30658d;
+  margin: 1rem 0 0;
+  padding: 1rem 0 0;
+}
+
+p {
+  margin: 0;
 }
